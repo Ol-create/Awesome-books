@@ -12,3 +12,8 @@ const awesomeBook =  function(){
     this.record.push(this.data);
     return this.data;
   };
+  this.local= function() {
+    // Set localStorage
+  localStorage.setItem('books', JSON.stringify(this.record));
+  this.returnInfo();
+};
