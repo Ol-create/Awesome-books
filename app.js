@@ -1,3 +1,7 @@
+// Create form and book container variables //
+const form = document.getElementById('form');
+const bookKeeper = document.getElementById('book-keeper');
+
 // Create book object
 const awesomeBook =  function(){
 
@@ -27,19 +31,20 @@ const awesomeBook =  function(){
       let count = 0;
       this.record.forEach((element) => {
         count += 1;
-        return   bookKeeper.innerHTML += ` 
-        <div class="bTitle">${element.title}</div>
-        <div class="bAuthor">${element.author}</div>
-        <button class="delete">Remove</button>
-        <hr width="175" align="left">
-      </div>
-      `;
-  });
-}
-},
+       
+     return   bookKeeper.innerHTML += ` 
+            <div class="bTitle">${element.title}</div>
+            <div class="bAuthor">${element.author}</div>
+            <button class="delete">Remove</button>
+            <hr width="175" align="left">
+          </div>
+          `;
+      });
+    }
+  },
 
- // Create   delete method
- this.eliminate= function(title, author) {
+  // Create   delete method
+  this.eliminate= function(title, author) {
     let indexArray;
     this.record.forEach((element, index) => {
       if (element.title === title && element.author === author) {
@@ -55,29 +60,28 @@ const awesome = new awesomeBook();
 
 // Creat event to add book  //
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    if (title === '' || author === '') {
-      alert('missing information');
-    } else {
-      awesome.addRecord(title, author);
-      awesome.local();
-      document.getElementById('title').value = '';
-      document.getElementById('author').value = '';
-    }
-  });
+  e.preventDefault();
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  if (title === '' || author === '') {
+    alert('missing information');
+  } else {
+    awesome.addRecord(title, author);
+    awesome.local();
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
+  }
+});
 
-  // Create event to remove book
+// Create event to remove book
 bookKeeper.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.innerHTML === 'Remove') {
-      const eliminateBook = e.path[1].childNodes[1].childNodes[0].data;
-      const eliminateAuthor = e.path[1].childNodes[3].childNodes[0].data;
-      awesome.eliminate(eliminateBook, eliminateAuthor);
-    }
-  });
-  
+  e.preventDefault();
+  if (e.target.innerHTML === 'Remove') {
+    const eliminateBook = e.path[1].childNodes[1].childNodes[0].data;
+    const eliminateAuthor = e.path[1].childNodes[3].childNodes[0].data;
+    awesome.eliminate(eliminateBook, eliminateAuthor);
+  }
+});
 
-  // create event when the page loads 
+// event when the page loads 
 document.addEventListener('DOMContentLoaded', awesome.returnInfo());
