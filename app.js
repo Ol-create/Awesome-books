@@ -3,24 +3,23 @@ const form = document.getElementById('form');
 const bookKeeper = document.getElementById('book-keeper');
 
 // Create book object
-const awesomeBook =  function(){
-
-    this.data = {};
-    this.record = [];
-// Creat add book method
-  this.addRecord= function(title, author) {
+const AwesomeBook = function () {
+  this.data = {};
+  this.record = [];
+  // Creat add book method
+  this.addRecord = function (title, author) {
     this.data = { title, author };
     this.record.push(this.data);
     return this.data;
   };
 
-  this.local= function() {
-      // Set localStorage
+  this.local = function () {
+    // Set localStorage
     localStorage.setItem('books', JSON.stringify(this.record));
     this.returnInfo();
   };
 
-  this.returnInfo =function() {
+  this.returnInfo = function () {
     bookKeeper.innerHTML = '';
 
     // Get items from local storage
@@ -28,11 +27,8 @@ const awesomeBook =  function(){
     if (this.record === null) {
       this.record = [];
     } else {
-      let count = 0;
       this.record.forEach((element) => {
-        count += 1;
-       
-     return   bookKeeper.innerHTML += ` 
+        bookKeeper.innerHTML += ` 
             <div class="bTitle">${element.title}</div>
             <div class="bAuthor">${element.author}</div>
             <button class="delete">Remove</button>
@@ -41,10 +37,10 @@ const awesomeBook =  function(){
           `;
       });
     }
-  },
+  };
 
   // Create   delete method
-  this.eliminate= function(title, author) {
+  this.eliminate = function (title, author) {
     let indexArray;
     this.record.forEach((element, index) => {
       if (element.title === title && element.author === author) {
@@ -53,10 +49,10 @@ const awesomeBook =  function(){
     });
     this.record.splice(indexArray, 1);
     this.local();
-  }
-}
+  };
+};
 
-const awesome = new awesomeBook();
+const awesome = new AwesomeBook();
 
 // Creat event to add book  //
 form.addEventListener('submit', (e) => {
@@ -83,5 +79,5 @@ bookKeeper.addEventListener('click', (e) => {
   }
 });
 
-// event when the page loads 
+// event when the page loads
 document.addEventListener('DOMContentLoaded', awesome.returnInfo());
