@@ -78,3 +78,6 @@ bookKeeper.addEventListener('click', (e) => {
     }
   });
   
+
+  // create event when the page loads 
+document.addEventListener('DOMContentLoaded', awesome.returnInfo());
