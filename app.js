@@ -52,3 +52,19 @@ const awesomeBook =  function(){
 }
 
 const awesome = new awesomeBook();
+
+// Creat event to add book  //
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    if (title === '' || author === '') {
+      alert('missing information');
+    } else {
+      awesome.addRecord(title, author);
+      awesome.local();
+      document.getElementById('title').value = '';
+      document.getElementById('author').value = '';
+    }
+  });
+  
