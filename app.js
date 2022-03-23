@@ -6,3 +6,9 @@ const awesomeBook =  function(){
 
     this.data = {};
     this.record = [];
+    // Creat add book method
+  this.addRecord= function(title, author) {
+    this.data = { title, author };
+    this.record.push(this.data);
+    return this.data;
+  };
