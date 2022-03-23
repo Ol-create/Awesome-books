@@ -67,4 +67,14 @@ form.addEventListener('submit', (e) => {
       document.getElementById('author').value = '';
     }
   });
+
+  // Create event to remove book
+bookKeeper.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.innerHTML === 'Remove') {
+      const eliminateBook = e.path[1].childNodes[1].childNodes[0].data;
+      const eliminateAuthor = e.path[1].childNodes[3].childNodes[0].data;
+      awesome.eliminate(eliminateBook, eliminateAuthor);
+    }
+  });
   
