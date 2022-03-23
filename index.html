@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awesome Books</title>
+    <title>Awesome Book</title>
 </head>
-<body>
-    <h1>Awesome Books</h1>
-    <div class="book-container">
-        <h4 id="book-name"></h4>
-        <h4 id="author"></h4>
-        <button id="remove">Remove</button>
-        <hr>
-    </div>
-    <form action="">
-    <input type="text" placeholder="Title"> 
-    <input type="text" placeholder="Author">
-    <button type="submit">Add</button>
-    </form>
-    
+
+    <section id="bookList">
+        <h1>All awesome books</h1>
+        <div class="container">
+            <div id="book-keeper"></div>
+        </div>
+    </section>
+<br>
+    <section id="form">
+        <form class="input">
+            <input type="text" id="title" placeholder="Book Title"> <br><br>
+            <input type="text" id="author" placeholder="Book Author"><br><br>
+            <input type="submit" id="submit" value="Add">
+        </form>
+    </section>
+
+
+    <script src="app.js"></script>
 </body>
 </html>
