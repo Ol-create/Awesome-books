@@ -37,3 +37,18 @@ const awesomeBook =  function(){
   });
 }
 },
+
+ // Create   delete method
+ this.eliminate= function(title, author) {
+    let indexArray;
+    this.record.forEach((element, index) => {
+      if (element.title === title && element.author === author) {
+        indexArray = index;
+      }
+    });
+    this.record.splice(indexArray, 1);
+    this.local();
+  }
+}
+
+const awesome = new awesomeBook();
