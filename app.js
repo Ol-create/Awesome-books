@@ -29,10 +29,13 @@ const AwesomeBook = function () {
     } else {
       this.record.forEach((element) => {
         bookKeeper.innerHTML += ` 
+          <div class="bookKeeperContainer">
+          <div class="innerKeeper">
             <div class="bTitle">${element.title}</div>
             <div class="bAuthor">${element.author}</div>
             <button class="delete">Remove</button>
             <hr width="175" align="left">
+            </div>
           </div>
           `;
       });
