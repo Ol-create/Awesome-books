@@ -39,17 +39,12 @@ const AwesomeBook = function () {
     }
   };
 
-  // Create   delete method
-  this.eliminate = function (title, author) {
-    let indexArray;
-    this.record.forEach((element, index) => {
-      if (element.title === title && element.author === author) {
-        indexArray = index;
-      }
-    });
-    this.record.splice(indexArray, 1);
-    this.local();
-  };
+// Remove book objects
+this.eliminate = (title, author) => {
+  this.record = this.record.filter((book) => book.title !== title || book.author !== author);
+  this.local();
+}
+
 };
 
 const awesome = new AwesomeBook();
