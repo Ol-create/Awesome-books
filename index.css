@@ -98,3 +98,61 @@ h2 {
   align-items: baseline;
   gap: 10px;
 }
+
+.book button {
+  font-weight: bold;
+  padding: 3px 8px;
+  border: solid #000 3px;
+  border-radius: 3px;
+  box-shadow: 2px 2px #000;
+}
+
+.gray {
+  background: #dde;
+}
+
+
+
+.date {
+  text-align: right;
+  padding: 15px 10px;
+}
+
+.main {
+  margin-top: 5%;
+}
+
+.addbookform,
+.contactsection {
+  margin-top: 10%;
+}
+
+.logo,
+.nav {
+  padding-left: 2%;
+}
+
+.contactlist {
+  list-style-type: none;
+}
+
+footer {
+  border: 3px solid grey;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.contactsection {
+  margin-bottom: 10%;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
