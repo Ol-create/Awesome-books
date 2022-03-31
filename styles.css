@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+  position: relative;
+}
+
+h1,
+h2 {
+  font-family: cursive;
+  font-size: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid grey;
+}
+
+.navlist {
+  list-style-type: none;
+  display: inline-flex;
+}
+
+.menuList {
+  border-left: 2px solid grey;
+}
+
+.link {
+  font-size: 30px;
+  font-family: cursive;
+  padding: 12px;
+  text-decoration: none;
+  color: initial;
+}
+
+.navlink1 {
+  font-size: 30px;
+  font-family: cursive;
+  padding: 12px;
+  text-decoration: none;
+  color: initial;
+}
+
+.link:active {
+  color: purple;
+}

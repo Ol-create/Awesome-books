@@ -1,29 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awesome Book</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
 
-    <section id="bookList">
-        <h1>All awesome books</h1>
-        <div class="container">
-            <div id="book-keeper"></div>
-        </div>
-    </section>
-<br>
-    <section id="form">
-        <form class="input">
-            <input type="text" id="title" placeholder="Book Title"> <br><br>
-            <input type="text" id="author" placeholder="Book Author"><br><br>
-            <input type="submit" id="submit" value="Add">
+    <header class="header">
+        <h1 class="logo">Awesome books</h1>
+        <nav class="nav">
+          <ul class="navlist">
+            <li class="menuList"><a class="link" href="#bookList">List</a></li>
+            <li class="menuList"><a class="link" href="#addnew">Add new</a></li>
+            <li class="menuList"><a class="link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+    <div class="date"></div>
+
+    <main class="main">
+      <section class="section">
+        <h2>All Awesome books</h2>
+        <div id="bookList"></div>
+      </section>
+
+      <section class="addbookform section" id="addnew">
+        <h2>Add a new book</h2>
+        <form  id="add" class="addBook" action="index.html" method="post">
+          <input type="text" name="Title" value="" placeholder="Title">
+          <input type="text" name="Author" value="" placeholder="Author">
+          <input id="addBtn" type="submit" name="Add" value="Add">
         </form>
-    </section>
+      </section>
 
+      <section class="contactsection section" id="contact">
+        <h2>Contact information</h2>
+        <p>Do you have any questions or you just want to say "hello"?</p>
+        <ul>
+          <li class="contactlist">Our email: mail@mail.com</li>
+          <li class="contactlist">Our phonme number: 08141955755</li>
+          <li class="contactlist">Our address: Streetname 22, 84036 City, Country</li>
+        </ul>
+      </section>
+    </main>
 
-    <script src="app.js"></script>
-</body>
+    <footer>
+      <h1 class="logo">Copyright</h1>
+      <nav class="nav">
+        <p>.......</p>
+      </nav>
+  </footer>
+
+    <script type="module" src="js/index.js"></script>
+  </body>
 </html>
