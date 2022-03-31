@@ -1,4 +1,4 @@
-import displayBook from './showBook.mjs';
+import displayBook from './showBook.js';
 
 const addListener = (newBook, book, bookList, bookShelf) => {
   newBook.addEventListener('submit', (e) => {

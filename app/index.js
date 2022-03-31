@@ -1,11 +1,11 @@
-import fromLS from './modules/localStorage.mjs';
-import displayBook from './modules/showBook.mjs';
-import navLinks from './modules/menu.mjs';
+import fromLS from './modules/localStorage.js';
+import displayBook from './modules/showBook.js';
+import navLinks from './modules/menu.js';
 import {
   bookShelf, navlist, section, newBook, book, datePlace,
-} from './modules/nodeVariables.mjs';
-import { bookList } from './modules/books.mjs';
-import addListener from './modules/addBook.mjs';
+} from './modules/nodeVariables.js';
+import { bookList } from './modules/books.js';
+import addListener from './modules/addBook.js';
 import { DateTime } from './modules/luxon.js';
 
 fromLS(bookList);

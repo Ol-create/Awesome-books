@@ -1,4 +1,4 @@
-import { section } from './nodeVariables.mjs';
+import { section } from './nodeVariables.js';
 
 export default class Books {
   constructor() {
