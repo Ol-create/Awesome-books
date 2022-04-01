@@ -3,7 +3,7 @@
 /**
  * @private
  */
-class LuxonError extends Error {}
+class LuxonError extends Error { }
 
 /**
  * @private
@@ -35,7 +35,7 @@ class InvalidDurationError extends LuxonError {
 /**
  * @private
  */
-class ConflictingSpecificationError extends LuxonError {}
+class ConflictingSpecificationError extends LuxonError { }
 
 /**
  * @private
@@ -49,7 +49,7 @@ class InvalidUnitError extends LuxonError {
 /**
  * @private
  */
-class InvalidArgumentError extends LuxonError {}
+class InvalidArgumentError extends LuxonError { }
 
 /**
  * @private
@@ -404,10 +404,10 @@ function objToLocalTS(obj) {
 
 function weeksInWeekYear(weekYear) {
   const p1 = (weekYear
-        + Math.floor(weekYear / 4)
-        - Math.floor(weekYear / 100)
-        + Math.floor(weekYear / 400))
-      % 7;
+    + Math.floor(weekYear / 4)
+    - Math.floor(weekYear / 100)
+    + Math.floor(weekYear / 400))
+    % 7;
   const last = weekYear - 1;
   const p2 = (last + Math.floor(last / 4) - Math.floor(last / 100) + Math.floor(last / 400)) % 7;
   return p1 === 4 || p2 === 3 ? 53 : 52;
@@ -824,25 +824,25 @@ class Formatter {
         case 'S':
           return this.num(dt.millisecond);
         case 'u':
-          // falls through
+        // falls through
         case 'SSS':
           return this.num(dt.millisecond, 3);
-          // seconds
+        // seconds
         case 's':
           return this.num(dt.second);
         case 'ss':
           return this.num(dt.second, 2);
-          // fractional seconds
+        // fractional seconds
         case 'uu':
           return this.num(Math.floor(dt.millisecond / 10), 2);
         case 'uuu':
           return this.num(Math.floor(dt.millisecond / 100));
-          // minutes
+        // minutes
         case 'm':
           return this.num(dt.minute);
         case 'mm':
           return this.num(dt.minute, 2);
-          // hours
+        // hours
         case 'h':
           return this.num(dt.hour % 12 === 0 ? 12 : dt.hour % 12);
         case 'hh':
@@ -851,7 +851,7 @@ class Formatter {
           return this.num(dt.hour);
         case 'HH':
           return this.num(dt.hour, 2);
-          // offset
+        // offset
         case 'Z':
           // like +6
           return formatOffset({ format: 'narrow', allowZ: this.opts.allowZ });
@@ -867,19 +867,19 @@ class Formatter {
         case 'ZZZZZ':
           // like Eastern Standard Time
           return dt.zone.offsetName(dt.ts, { format: 'long', locale: this.loc.locale });
-          // zone
+        // zone
         case 'z':
           // like America/New_York
           return dt.zoneName;
-          // meridiems
+        // meridiems
         case 'a':
           return meridiem();
-          // dates
+        // dates
         case 'd':
           return useDateTimeFormatter ? string({ day: 'numeric' }, 'day') : this.num(dt.day);
         case 'dd':
           return useDateTimeFormatter ? string({ day: '2-digit' }, 'day') : this.num(dt.day, 2);
-          // weekdays - standalone
+        // weekdays - standalone
         case 'c':
           // like 1
           return this.num(dt.weekday);
@@ -892,7 +892,7 @@ class Formatter {
         case 'ccccc':
           // like 'T'
           return weekday('narrow', true);
-          // weekdays - format
+        // weekdays - format
         case 'E':
           // like 1
           return this.num(dt.weekday);
@@ -905,7 +905,7 @@ class Formatter {
         case 'EEEEE':
           // like 'T'
           return weekday('narrow', false);
-          // months - standalone
+        // months - standalone
         case 'L':
           // like 1
           return useDateTimeFormatter
@@ -925,7 +925,7 @@ class Formatter {
         case 'LLLLL':
           // like J
           return month('narrow', true);
-          // months - format
+        // months - format
         case 'M':
           // like 1
           return useDateTimeFormatter
@@ -945,7 +945,7 @@ class Formatter {
         case 'MMMMM':
           // like J
           return month('narrow', false);
-          // years
+        // years
         case 'y':
           // like 2014
           return useDateTimeFormatter ? string({ year: 'numeric' }, 'year') : this.num(dt.year);
@@ -964,7 +964,7 @@ class Formatter {
           return useDateTimeFormatter
             ? string({ year: 'numeric' }, 'year')
             : this.num(dt.year, 6);
-          // eras
+        // eras
         case 'G':
           // like AD
           return era('short');
@@ -1103,11 +1103,11 @@ class Zone {
    * Returns the offset's value as a string
    * @abstract
    * @param {number} ts - Epoch milliseconds for which to get the offset
-   * @param {string} format - What style of offset to return.
+   * @param {string} _format - What style of offset to return.
    *                          Accepts 'narrow', 'short', or 'techie'. Returning '+6', '+06:00', or '+0600' respectively
    * @return {string}
    */
-  formatOffset(ts, format) {
+  formatOffset(ts, _format) {
     throw new ZoneIsAbstractError();
   }
 
@@ -1802,9 +1802,9 @@ function supportsFastNumbers(loc) {
   }
   return (
     loc.numberingSystem === 'latn'
-      || !loc.locale
-      || loc.locale.startsWith('en')
-      || new Intl.DateTimeFormat(loc.intl).resolvedOptions().numberingSystem === 'latn'
+    || !loc.locale
+    || loc.locale.startsWith('en')
+    || new Intl.DateTimeFormat(loc.intl).resolvedOptions().numberingSystem === 'latn'
   );
 }
 
@@ -2640,8 +2640,7 @@ class Duration {
   static fromObject(obj, opts = {}) {
     if (obj == null || typeof obj !== 'object') {
       throw new InvalidArgumentError(
-        `Duration.fromObject: argument expected to be an object, got ${
-          obj === null ? 'null' : typeof obj
+        `Duration.fromObject: argument expected to be an object, got ${obj === null ? 'null' : typeof obj
         }`,
       );
     }
@@ -4285,7 +4284,7 @@ function unitForToken(token, loc) {
         return oneOf(loc.eras('short', false), 0);
       case 'GG':
         return oneOf(loc.eras('long', false), 0);
-        // years
+      // years
       case 'y':
         return intUnit(oneToSix);
       case 'yy':
@@ -4296,7 +4295,7 @@ function unitForToken(token, loc) {
         return intUnit(fourToSix);
       case 'yyyyyy':
         return intUnit(six);
-        // months
+      // months
       case 'M':
         return intUnit(oneOrTwo);
       case 'MM':
@@ -4313,17 +4312,17 @@ function unitForToken(token, loc) {
         return oneOf(loc.months('short', false, false), 1);
       case 'LLLL':
         return oneOf(loc.months('long', false, false), 1);
-        // dates
+      // dates
       case 'd':
         return intUnit(oneOrTwo);
       case 'dd':
         return intUnit(two);
-        // ordinals
+      // ordinals
       case 'o':
         return intUnit(oneToThree);
       case 'ooo':
         return intUnit(three);
-        // time
+      // time
       case 'HH':
         return intUnit(two);
       case 'H':
@@ -4354,20 +4353,20 @@ function unitForToken(token, loc) {
         return simple(oneOrTwo);
       case 'uuu':
         return intUnit(one);
-        // meridiem
+      // meridiem
       case 'a':
         return oneOf(loc.meridiems(), 0);
-        // weekYear (k)
+      // weekYear (k)
       case 'kkkk':
         return intUnit(four);
       case 'kk':
         return intUnit(twoToFour, untruncateYear);
-        // weekNumber (W)
+      // weekNumber (W)
       case 'W':
         return intUnit(oneOrTwo);
       case 'WW':
         return intUnit(two);
-        // weekdays
+      // weekdays
       case 'E':
       case 'c':
         return intUnit(one);
@@ -4379,14 +4378,14 @@ function unitForToken(token, loc) {
         return oneOf(loc.weekdays('short', true, false), 1);
       case 'cccc':
         return oneOf(loc.weekdays('long', true, false), 1);
-        // offset/zone
+      // offset/zone
       case 'Z':
       case 'ZZ':
         return offset(new RegExp(`([+-]${oneOrTwo.source})(?::(${two.source}))?`), 2);
       case 'ZZZ':
         return offset(new RegExp(`([+-]${oneOrTwo.source})(${two.source})?`), 2);
-        // we don't support ZZZZ (PST) or ZZZZZ (Pacific Standard Time) in parsing
-        // because we don't have any way to figure out what they are
+      // we don't support ZZZZ (PST) or ZZZZZ (Pacific Standard Time) in parsing
+      // because we don't have any way to figure out what they are
       case 'z':
         return simple(/[a-z_+-/]{1,256}?/i);
       default:
@@ -4778,7 +4777,7 @@ function hasInvalidTimeData(obj) {
     hour, minute, second, millisecond,
   } = obj;
   const validHour = integerBetween(hour, 0, 23)
-      || (hour === 24 && minute === 0 && second === 0 && millisecond === 0);
+    || (hour === 24 && minute === 0 && second === 0 && millisecond === 0);
   const validMinute = integerBetween(minute, 0, 59);
   const validSecond = integerBetween(second, 0, 59);
   const validMillisecond = integerBetween(millisecond, 0, 999);
@@ -4882,9 +4881,9 @@ function adjustTime(inst, dur) {
     year,
     month,
     day:
-        Math.min(inst.c.day, daysInMonth(year, month))
-        + Math.trunc(dur.days)
-        + Math.trunc(dur.weeks) * 7,
+      Math.min(inst.c.day, daysInMonth(year, month))
+      + Math.trunc(dur.days)
+      + Math.trunc(dur.weeks) * 7,
   };
   const millisToAdd = Duration.fromObject({
     years: dur.years - Math.trunc(dur.years),
@@ -6098,8 +6097,8 @@ class DateTime {
 
     const normalized = normalizeObject(values, normalizeUnit);
     const settingWeekStuff = !isUndefined(normalized.weekYear)
-        || !isUndefined(normalized.weekNumber)
-        || !isUndefined(normalized.weekday);
+      || !isUndefined(normalized.weekNumber)
+      || !isUndefined(normalized.weekday);
     const containsOrdinal = !isUndefined(normalized.ordinal);
     const containsGregorYear = !isUndefined(normalized.year);
     const containsGregorMD = !isUndefined(normalized.month) || !isUndefined(normalized.day);

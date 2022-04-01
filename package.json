@@ -1,0 +1,26 @@
+{
+  "name": "awesome-books",
+  "version": "1.0.0",
+  "description": "- html\r - css\r - JavaScript\r - vscode\r - git\r - github",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ol-create/Awesome-books.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ol-create/Awesome-books/issues"
+  },
+  "homepage": "https://github.com/Ol-create/Awesome-books#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
