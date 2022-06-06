@@ -10,7 +10,7 @@
 - github
 
 ## Live Site
-Click [link](awesomebooks9.netlify.app) to view Awesome Book Website
+Click [link](https://awesomebooks9.netlify.app/) to view Awesome Book Website
 
 ## Getting Started
 
