@@ -9,6 +9,9 @@
 - git
 - github
 
+## Live Site
+Click [link](awesomebooks9.netlify.app) to view Awesome Book Website
+
 ## Getting Started
 
 - Add a .gitignore file.
