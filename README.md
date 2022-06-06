@@ -10,6 +10,7 @@
 - github
 
 ## Live Site
+### App deploy on netlify
 Click [link](https://awesomebooks9.netlify.app/) to view Awesome Book Website
 
 ## Getting Started
