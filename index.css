@@ -1,0 +1,156 @@
+body {
+  text-align: center;
+  position: relative;
+}
+
+h1,
+h2 {
+  font-family: cursive;
+  font-size: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid grey;
+}
+
+.navlist {
+  list-style-type: none;
+  display: inline-flex;
+}
+
+.menuList {
+  border-left: 2px solid grey;
+}
+
+.link {
+  font-size: 30px;
+  font-family: cursive;
+  padding: 12px;
+  text-decoration: none;
+  color: initial;
+}
+
+.navlink1 {
+  font-size: 30px;
+  font-family: cursive;
+  padding: 12px;
+  text-decoration: none;
+  color: initial;
+}
+
+.link:active {
+  color: purple;
+}
+
+#bookList {
+  border: solid #000 3px;
+  border-radius: 3px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+#line {
+  margin-top: 30px;
+  width: 150px;
+  background: #000;
+  height: 3px;
+}
+
+#add {
+  width: 300px;
+  gap: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#add input {
+  padding: 5px;
+  border: solid #000 3px;
+  border-radius: 3px;
+}
+
+#addBtn {
+  align-self: flex-end;
+  width: 50px;
+  box-shadow: 2px 2px #000;
+}
+
+.book {
+  min-height: 30px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#bookList .book:nth-child(odd) {
+  background: #ddd;
+}
+
+.book div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.book button {
+  font-weight: bold;
+  padding: 3px 8px;
+  border: solid #000 3px;
+  border-radius: 3px;
+  box-shadow: 2px 2px #000;
+}
+
+.gray {
+  background: #dde;
+}
+
+.date {
+  text-align: right;
+  padding: 15px 10px;
+}
+
+.main {
+  margin-top: 5%;
+}
+
+.addbookform,
+.contactsection {
+  margin-top: 10%;
+}
+
+.logo,
+.nav {
+  padding-left: 2%;
+}
+
+.contactlist {
+  list-style-type: none;
+}
+
+footer {
+  border: 3px solid grey;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.contactsection {
+  margin-bottom: 10%;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
