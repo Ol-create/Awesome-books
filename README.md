@@ -26,7 +26,7 @@ Click [link](https://awesomebooks9.netlify.app/) to view Awesome Book Website
 
 - GitHub: [@GitHubhandle](https://www.linkedin.com/in/paul-oluyemi-193966ab)
 - Twitter: [@Twitterhandle](https://twitter.com/OluyemiPaul99)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/paul-oluyemi-193966ab)
+- LinkedIn: [@LinkedIn](https://linkedin.com/in/paul-oluyemi-193966ab)
 
 ## 🤝 Contributing
 
